@@ -49,7 +49,7 @@ def vectorizing_state(state):      # Reminder: change this for your specific tas
     state   = np.concatenate((state_0, state_1 ))
     return state
 
-def vectorizing_action(pre_activated_actions):  # Reminder: change this for your specific task ⚠️⚠️⚠️
+def vectorizing_action(pre_activated_actions, training_episode, env, s):  # Reminder: change this for your specific task ⚠️⚠️⚠️
     action_size      = pre_activated_actions.size(2)
     action_argmax    = int(torch.argmax(pre_activated_actions[0, 0]))
     return np.eye(action_size)[action_argmax], action_argmax
