@@ -101,7 +101,7 @@ def vectorizing_action(pre_activated_actions, training_episode, env, s):  # Remi
     action_size      = pre_activated_actions.size(2)
     action_argmax    = int(torch.argmax(pre_activated_actions[0, 0]))
 
-    if (training_episode+1) <= 5:
+    if (training_episode+1) <= 1:
         action_argmax = heuristic(env, s)
 
     return np.eye(action_size)[action_argmax], action_argmax
